@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #111;
+      color: #ddd;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    header a {
+      color: #f39c12;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .gallery img {
+      border: 3px solid #444;
+      border-radius: 10px;
+      max-width: 256px;
+      max-height: 256px;
+      box-shadow: 0 0 10px #f39c12;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      border-color: #f39c12;
+      box-shadow: 0 0 20px #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Image Gallery</h1>
+    <nav><a href="/">Back to Home</a></nav>
+  </header>
+  <div class="gallery">
+    {% for img in images %}
+      <img src="{{ img }}" alt="Gallery Image" />
+    {% endfor %}
+  </div>
+</body>
+</html>
